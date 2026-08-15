@@ -1,0 +1,50 @@
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ml-prediction-api
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: ml-prediction-api
+
+  template:
+    metadata:
+      labels:
+        app: ml-prediction-api
+
+    spec:
+      containers:
+        - name: ml-prediction-api
+
+          image: ghcr.io/k8-consultant/ml-prediction-api:374d8bdef2291953dce01e5720ed350217859ce9
+
+          ports:
+            - containerPort: 8000
+
+          env:
+            - name: APP_VERSION
+              value: "v1"
+
+            - name: MODEL_VERSION
+              value: "model-v1"
+
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+
+            initialDelaySeconds: 3
+            periodSeconds: 5
+
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+
+            initialDelaySeconds: 10
+            periodSeconds: 10
