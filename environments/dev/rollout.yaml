@@ -1,12 +1,11 @@
-
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 
 metadata:
   name: ml-prediction-api
 
 spec:
-  replicas: 6
+  replicas: 5
 
   selector:
     matchLabels:
@@ -37,7 +36,6 @@ spec:
             httpGet:
               path: /health
               port: 8000
-
             initialDelaySeconds: 3
             periodSeconds: 5
 
@@ -45,6 +43,30 @@ spec:
             httpGet:
               path: /health
               port: 8000
-
             initialDelaySeconds: 10
             periodSeconds: 10
+
+  strategy:
+    canary:
+
+      steps:
+
+        - setWeight: 20
+
+        - pause:
+            duration: 30s
+
+        - setWeight: 40
+
+        - pause:
+            duration: 30s
+
+        - setWeight: 60
+
+        - pause:
+            duration: 30s
+
+        - setWeight: 80
+
+        - pause:
+            duration: 30s
