@@ -52,12 +52,12 @@ spec:
       steps:
 
         - setWeight: 20
-        - pause{}
+        - pause {}
             
         - setWeight: 40
         - pause {}
 
         - setWeight: 60
         - pause {}
-        
+
         - setWeight: 100
