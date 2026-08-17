@@ -16,6 +16,12 @@ spec:
       labels:
         app: ml-prediction-api
 
+      annotations:
+         prometheus.io/scrape: "true"
+         prometheus.io/path: "/metrics"
+         prometheus.io/port: "8000"
+        
+
     spec:
       containers:
         - name: ml-prediction-api
