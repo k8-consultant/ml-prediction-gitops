@@ -26,7 +26,7 @@ spec:
       containers:
         - name: ml-prediction-api
 
-          image: ghcr.io/k8-consultant/ml-prediction-api:6a1fc2ab36cf1a3f8ad1d6c1ac5ae0b5eedfd825
+          image: ghcr.io/k8-consultant/ml-prediction-api:3f07b72346e71e6191fad73083f74c77d374ebb6
 
           ports:
             - containerPort: 8000
