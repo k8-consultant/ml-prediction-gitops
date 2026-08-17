@@ -33,7 +33,7 @@ spec:
 
           env:
             - name: APP_VERSION
-              value: "v1"
+              value: "v2"
 
             - name: MODEL_VERSION
               value: "model-v1"
@@ -74,7 +74,7 @@ spec:
         - setWeight: 60
         - pause:
             duration: 70s  
-            
+
         - analysis: 
              templates: 
                 - templateName: ml-api-success-rate
