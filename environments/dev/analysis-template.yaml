@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+
+metadata:
+  name: ml-api-success-rate
+
+spec:
+  metrics:
+    - name: prediction-success-rate
+
+      interval: 15s
+      count: 3
+
+      successCondition: result[0] >= 0.95
+      failureLimit: 1
+
+      provider:
+        prometheus:
+          address: http://prometheus-server.monitoring.svc.cluster.local
+
+          query: |
+            (
+              sum(
+                increase(
+                  ml_api_requests_total{
+                    endpoint="/predict",
+                    status="success"
+                  }[5m]
+                )
+              )
+              /
+              clamp_min(
+                sum(
+                  increase(
+                    ml_api_requests_total{
+                      endpoint="/predict"
+                    }[5m]
+                  )
+                ),
+                1
+              )
+            )

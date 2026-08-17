@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - rollout.yaml
   - service.yaml
+  - analysis-template.yaml
