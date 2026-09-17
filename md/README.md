@@ -62,3 +62,21 @@ terraform -chdir=terraform validate
 checkov -d terraform
 kubectl apply --dry-run=client -f k8s/
 ```
+
+
+
+I’m Augustine, a DevOps and Cloud Engineer with several years of experience working across AWS and Azure environments, with a strong focus on infrastructure automation, CI/CD, cloud security, reliability and production operations.
+
+One of my strongest AWS experiences was at Kainos, where I worked on the DWP Common Risk Engine, which was a machine-learning-based fraud and risk platform. I worked with AWS services including Lambda, SQS, API Gateway, SageMaker, S3, KMS and IAM. A major part of my responsibility was automating infrastructure and deployments, while making sure security, least-privilege access, monitoring and reliability were built into the platform.
+
+I also have strong Infrastructure-as-Code experience with Terraform. For example, at The Very Group, I worked with Terraform for AWS infrastructure and integrated Checkov into the pipeline to identify security and compliance issues before infrastructure changes reached production.
+
+On the CI/CD side, I’ve built and maintained pipelines using GitLab CI, Jenkins, GitHub Actions and Azure DevOps. My pipelines typically include build, testing, security scanning, packaging and deployment stages. I’ve also worked with security tooling such as SonarQube, Snyk and Aqua, and I’m comfortable with integrating SAST, dependency, container, infrastructure and DAST checks into the delivery process.
+
+I also have hands-on experience with deployment strategies such as Blue-Green and progressive delivery. My approach is to combine automated health checks and monitoring with controlled traffic switching, so that if the new version fails its validation criteria, we can quickly roll back to the stable version.
+More recently, I’ve been working heavily with Kubernetes, particularly EKS and AKS, Terraform, GitOps, Argo CD and Argo Rollouts, as well as Prometheus and Grafana for observability. I’ve also been developing my Python skills further for infrastructure and operational automation.
+
+What particularly interests me about this EPAM role is that it brings together the areas I’ve been working with throughout my career: AWS, Terraform, CI/CD, security, automation, resilient deployment strategies and production operations. I think my combination of hands-on cloud engineering and production experience would allow me to contribute effectively while continuing to grow within a large engineering environment like EPAM. 
+
+
+
